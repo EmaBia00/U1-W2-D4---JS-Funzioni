@@ -1,19 +1,73 @@
 // Esercizi aggiuntivi (facoltativi) per D4
 
+//ES 10 script.js
+
+const giveMeRandom = function (n) {
+  const randomArray = [];
+  for (let i = 0; i < n; i++) {
+    randomArray.push(Math.floor(Math.random() * 10));
+  }
+  return randomArray;
+};
+
 /* EXTRA 1
  Scrivi una funzione chiamata "checkArray" che riceve un array di numeri casuali (creati con la funzione "giveMeRandom") e per ogni elemento stampa in console
  se il suo valore è maggiore di 5 o no.
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const checkArray = function (randomArray1) {
+  let sumArray = null;
+  for (i = 0; i < randomArray1.length; i++) {
+    if (randomArray1[i] >= 5) {
+      console.log(randomArray1[i]);
+      sumArray += randomArray1[i];
+    }
+  }
+  console.log("La somma di tutti i valori maggiori di 5 è", sumArray);
+};
+
+checkArray(giveMeRandom(10));
 
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const shoppingCart = [
+  {
+    price: 90,
+    name: "Gioele",
+    id: "01",
+    quantity: 3,
+  },
+  {
+    price: 40,
+    name: "Adele",
+    id: "02",
+    quantity: 1,
+  },
+  {
+    price: 120,
+    name: "Ema",
+    id: "03",
+    quantity: 5,
+  },
+];
+
+const shoppingCartTotal = function (shoppingCart) {
+  let totalPrice1 = null;
+  let totalPrice2 = null;
+  for (let i = 0; i < shoppingCart.length; i++) {
+    const carrello = shoppingCart[i];
+    totalPrice1 = carrello.price * carrello.quantity;
+    totalPrice2 += carrello.price * carrello.quantity;
+    console.log("Totale di ogni persona:", totalPrice1);
+  }
+  console.log("Totale dovuto al negozio:", totalPrice2);
+};
+
+shoppingCartTotal(shoppingCart);
 
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".

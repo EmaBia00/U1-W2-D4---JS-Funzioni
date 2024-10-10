@@ -55,12 +55,12 @@ const crazyDiff = function (num1) {
   if (num1 > 19) {
     return console.log(
       "La differenza assoluta moltiplicata per 3 è:",
-      Math.abs((num1 / 19) * 3)
+      Math.abs((num1 - 19) * 3)
     );
   } else {
     return console.log(
       "La differenza assoluta moltiplicata per 3 è:",
-      Math.abs(num1 / 19)
+      Math.abs(num1 - 19)
     );
   }
 };
@@ -91,7 +91,7 @@ console.log(boundary(400));
 console.log("ESERCIZIO 5");
 
 // const epify = function (stringParam) {
-//     if (stringParam.startsWith("EPICODE")) { //Utilizzando il metodo startsWith
+//     if (stringParam.toUpperCase().startsWith("EPICODE")) { //Utilizzando il metodo startsWith
 //       return stringParam;
 //     } else {
 //       return "EPICODE " + stringParam;
