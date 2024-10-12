@@ -15,6 +15,7 @@ const giveMeRandom = function (n) {
  se il suo valore è maggiore di 5 o no.
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
+console.log("ESERCIZIO 01");
 
 const checkArray = function (randomArray1) {
   let sumArray = null;
@@ -33,6 +34,7 @@ checkArray(giveMeRandom(10));
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
 */
+console.log("ESERCIZIO 02");
 
 const shoppingCart = [
   {
@@ -73,29 +75,85 @@ shoppingCartTotal(shoppingCart);
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "addToShoppingCart" che riceve un nuovo oggetto dello stesso tipo, lo aggiunge a "shoppingCart" e ritorna il nuovo numero totale degli elementi.
 */
+console.log("ESERCIZIO 03");
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const newObj = {
+  price: 80,
+  name: "Andreea",
+  id: "04",
+  quantity: 2,
+};
+
+const addToShoppingCart = function (newItem) {
+  shoppingCart.push(newItem);
+  return shoppingCart.length;
+};
+console.log("Nuovo totale elementi nel carrello", addToShoppingCart(newObj));
+console.log("Contenuto del carrello aggiornato:", shoppingCart);
 
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "maxShoppingCart" che riceve l'array "shoppingCart" e ritorna l'oggetto più costoso in esso contenuto.
 */
+console.log("ESERCIZIO 04");
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const maxShoppingCart = function (arrayCart) {
+  let finalValor = null;
+  for (let i = 0; i < arrayCart.length; i++) {
+    const cart = arrayCart[i];
+    if (cart.price > finalValor) {
+      finalValor = cart.price;
+    }
+  }
+  return finalValor;
+};
+
+console.log(maxShoppingCart(shoppingCart));
 
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
 */
+console.log("ESERCIZIO 05");
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const latestShoppingCart = function (newArray) {
+  const arrayPippo = [];
+  for (let i = 0; i < newArray.length; i++) {
+    arrayPippo.push(newArray[i].quantity);
+  }
+  return arrayPippo;
+};
+console.log(latestShoppingCart(shoppingCart));
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
  La funzione è composta da un ciclo che stampa un numero casuale tra 0 e 9 finchè il numero casuale non è maggiore di x per tre volte di fila.
 */
+console.log("ESERCIZIO 06");
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let num1 = 5;
+
+const loopUntil = function (x) {
+  let count = 0;
+  while (count < 3) {
+    let casualNum = Math.floor(Math.random() * 10);
+    if (casualNum > x) {
+      count++;
+      console.log(
+        `Il numero ${casualNum} è il ${count} ad essere stato generato`
+      );
+    } else {
+      count = 0;
+    }
+    console.log(casualNum);
+  }
+};
+
+if (num1 >= 0 && num1 <= 9) {
+  loopUntil(num1);
+} else {
+  console.log("Il numero", num1, "non è compreso tra 0 e 9");
+}
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
